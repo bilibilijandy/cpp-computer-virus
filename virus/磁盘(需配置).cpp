@@ -8,6 +8,8 @@
 #include <tlhelp32.h>
 #include <bits/stdc++.h>
 HANDLE ProcessHandle = 0;
+
+//记得配置o~
 int wl=2;  //威力
 WINBOOL js=TRUE;  //是否禁用键盘和鼠标(此处一定要大写)
 bool shutdown2=false; //是否关机
